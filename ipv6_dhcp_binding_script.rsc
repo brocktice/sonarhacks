@@ -29,7 +29,7 @@ add dont-require-permissions=no name=ipv6-binding-script policy=read,write sourc
     \n       :if ( [/ip dhcp-ser lease find where mac-address=\$macaddr and server~\"\$v4server\"] = \"\" ) do={\
     \n               :log info \"AUTOV6: Could not find IPv4 lease for mac address \$macaddr\"\
     \n       } else={\
-    \n               :set v6leasetime [/ipv6 dhcp-ser get [:pick [find where name~\"\$bindingServerName\"] 0 ] lease-time]
+    \n               :set v6leasetime [/ipv6 dhcp-ser get [:pick [find where name~\"\$bindingServerName\"] 0 ] lease-time]\
     \n               :set v4addr [/ip dhcp-ser lease get [:pick [find where mac-address=\$macaddr and server~\"\$v4server\"] 0 ] address ]\
     \n               :log info \"AUTOV6: IPv4 address associcated with \$macaddr is \$v4addr\"\
     \n               :if ( [/ip firewall address-list find where address=\$v4addr and list=\$authlist ] = \"\" ) do={\
