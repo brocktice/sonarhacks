@@ -19,9 +19,8 @@ add dont-require-permissions=no name=ipv6-binding-script policy=read,write sourc
     \n:global authlist\
     \n:global v6leasetime\
     \n\
-    \n# Set variables for your system and network here
+    \n# Set variables for your system and network here\
     \n:set v4server \"public\"\
-    \n:
     \n:set authlist \"non-delinquent\"\
     \n\
     \n:if (\$bindingBound = 1) do={\
